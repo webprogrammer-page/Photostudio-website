@@ -1,0 +1,14 @@
+extends ../layouts/pages
+block append head
+	block title
+		- var title='Снег photography, заказ фотографа в Киеве';
+		//- var base_url='https://sneg-photo.kiev.ua/';
+		- var meta_robots='index,follow';
+		- var meta_description='Заказать фотосессию, фотосъемка недорого';
+		- var meta_keywords='Фотограф Киев, свадебное фото, заказ услуг фотографа, лав стори, семейные фото';
+block content
+	+index-top("/static/img/slider_top.jpg")
+	+index-middle("СВАДЬБЫ", "ФОТОСЪЕМКА, ФОТОАЛЬБОМЫ", 1, "/static/img/no_photo.jpg", "weddingsCarousel")
+	+index-middle("LOVE STORY", "ФОТОСЪЕМКА, ФОТООБОИ, КАЛЕНДАРИ",1, "/static/img/no_photo.jpg", "lovestoryCarousel")
+	+index-bottom("certificate","ПОДАРОЧНЫЙ СЕРТИФИКАТ", "right-text-block", "/static/img/certificate.jpg")
+	+index-bottom("photo-course","ФОТОКУРС", "left-text-block", "/static/img/course.jpg")

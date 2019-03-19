@@ -1,0 +1,90 @@
+extends ../layouts/pages
+block append head
+	block title
+		- var title='Портфолио работ фотографа в Киеве';
+		//- var base_url='https://sneg-photo.kiev.ua/';
+		- var meta_robots='index,follow';
+		- var meta_description='Портфолио фотографа: свадьбы, love story, лав стори, семейные фото';
+		- var meta_keywords='Портфолио, фотограф на свадьбу, лав стори, семейные фото';
+
+block content
+	section.container-fluid.page-header
+		.container-center-xl
+			.media-container-row
+				.col-12.col-md-4.col-xl-6.padding-left-0px-xl
+					.media-wrap.text-body
+						ol.breadcrumb
+							li.breadcrumb-item
+								a(href='#')
+									|Главная
+							li.breadcrumb-item()
+								|Портфолио
+				.col-12.col-md-6.col-xl-4.header-padding
+					.media-wrap.text-body
+						h1.text-center.text-xl-left
+							|ПОРТФОЛИО
+
+	section.container-fluid.portfolio
+		.media-container-row
+			.col-12
+				.portfolio-filter-select-xs-sm
+					select
+						option(value="all") Все работы
+						option(value="wedding") Свадьбы
+						option(value="love-story") Love story
+						option(value="family") Семейные
+						option(value="other") Другое
+				.portfolio-filter-select-md-lg-xl
+					nav.navbar
+						.d-flex.mx-auto
+							ul.navbar-nav
+								li.nav-item
+									button.btn-portfolio-filter
+										|ВСЕ РАБОТЫ
+								li.nav-item
+									button.btn-portfolio-filter
+										|СВАДЬБЫ
+								li.nav-item
+									button.btn-portfolio-filter
+										|LOVE STORY
+								li.nav-item
+									button.btn-portfolio-filter
+										|СЕМЕЙНЫЕ
+								li.nav-item
+									button.btn-portfolio-filter
+										|ДРУГОЕ
+		.portfolio-photos.media-container-row
+			+portfolio-photo('https://storage.googleapis.com/bd-ua-01/building-origin-image/20554-728x546.jpg', 'https://storage.googleapis.com/bd-ua-01/building-origin-image/20554-728x546.jpg')
+			+portfolio-photo('https://storage.googleapis.com/bd-ua-01/building-origin-image/20554-728x546.jpg', 'https://storage.googleapis.com/bd-ua-01/building-origin-image/20554-728x546.jpg')
+			+portfolio-photo('https://storage.googleapis.com/bd-ua-01/building-origin-image/20554-728x546.jpg', 'https://storage.googleapis.com/bd-ua-01/building-origin-image/20554-728x546.jpg')
+			+portfolio-photo('https://storage.googleapis.com/bd-ua-01/building-origin-image/20554-728x546.jpg', 'https://storage.googleapis.com/bd-ua-01/building-origin-image/20554-728x546.jpg')
+			+portfolio-photo('https://storage.googleapis.com/bd-ua-01/building-origin-image/20554-728x546.jpg', 'https://storage.googleapis.com/bd-ua-01/building-origin-image/20554-728x546.jpg')
+			+portfolio-photo('https://storage.googleapis.com/bd-ua-01/building-origin-image/20554-728x546.jpg', 'https://storage.googleapis.com/bd-ua-01/building-origin-image/20554-728x546.jpg')
+			+portfolio-photo('https://storage.googleapis.com/bd-ua-01/building-origin-image/20554-728x546.jpg', 'https://storage.googleapis.com/bd-ua-01/building-origin-image/20554-728x546.jpg')
+			+portfolio-photo('https://storage.googleapis.com/bd-ua-01/building-origin-image/20554-728x546.jpg', 'https://storage.googleapis.com/bd-ua-01/building-origin-image/20554-728x546.jpg')
+			+portfolio-photo('https://storage.googleapis.com/bd-ua-01/building-origin-image/20554-728x546.jpg', 'https://storage.googleapis.com/bd-ua-01/building-origin-image/20554-728x546.jpg')
+			+portfolio-photo('https://storage.googleapis.com/bd-ua-01/building-origin-image/20554-728x546.jpg', 'https://storage.googleapis.com/bd-ua-01/building-origin-image/20554-728x546.jpg')
+			+portfolio-photo('https://storage.googleapis.com/bd-ua-01/building-origin-image/20554-728x546.jpg', 'https://storage.googleapis.com/bd-ua-01/building-origin-image/20554-728x546.jpg')
+			+portfolio-photo('https://storage.googleapis.com/bd-ua-01/building-origin-image/20554-728x546.jpg', 'https://storage.googleapis.com/bd-ua-01/building-origin-image/20554-728x546.jpg')
+		.portfolio-showmone.media-container-row
+			.col-12.d-flex
+				button.btn-flat-white.mx-auto
+					|ПОКАЗАТЬ ЕЩЕ
+	section.container-fluid.order
+		.media-container-row
+			.col-12.d-flex
+				.order-form.mx-auto
+					h2.mx-auto.text-center
+						|ЗАКАЗАТЬ ФОТОСЪЕМКУ
+					form(id="orderPortfolio", method="post")
+						.fields
+							.field
+								label(for="order-name")
+									|Имя:
+								input(type="text", id="order-name", placeholder="Имя")
+							.field
+								label(for="order-phone")
+									|Телефон:
+								input(type="text", id="order-phone", placeholder="Телефон" class="mask-phone-lost")
+						button(type="submit", value="Submit" form="orderPortfolio" class="btn-flat-black-transparent mx-auto")
+							|ОТПРАВИТЬ

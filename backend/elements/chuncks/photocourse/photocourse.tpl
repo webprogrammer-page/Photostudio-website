@@ -1,0 +1,1 @@
+[[getPhotocourse? &tpl=`photocourseItem`]]

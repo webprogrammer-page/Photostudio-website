@@ -1,0 +1,141 @@
+mixin portfolio-photo(photoLink, previewPhotoLink)
+    .col-12.col-sm-12.col-md-6.col-lg-4.photo-wrap
+        a(href=photoLink, data-fancybox='portfolio')
+            img.img-fluid(alt="", title="" src=previewPhotoLink)
+            .overlay
+                .element
+                    i.fas.fa-search.fa-2x
+
+mixin index-top-carousel-slide(imageFilePath)
+    .carousel-item.item
+        img.img-fluid(src=imageFilePath)
+        .container-center-xl.margin-top-from-image.carousel-control-padding
+            |Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+mixin index-top(imageFilePath)
+    section.container-fluid.top-slider
+        +index-blockheader("НАШИ ПРЕИМУЩЕСТВА", false, false, 0)
+        .media-container-row
+            .col-12.remove-col-md-paddings                
+                div(id="topCarouselSlider", class="carousel-top slide owl-carousel")
+                    +index-top-carousel-slide(imageFilePath)
+                    +index-top-carousel-slide(imageFilePath)
+                    +index-top-carousel-slide(imageFilePath)
+                    
+
+
+mixin index-middle(title, subtitle, bottomLineColsXl,imageFilePath, carouselId)
+    section.container-fluid.photo-service
+        .container-center-xl
+            +index-blockheader(title, subtitle, false, bottomLineColsXl)
+            +index-middle-image(imageFilePath)
+            +index-middle-cards(carouselId)
+
+mixin index-bottom(sectionClassName, title, textBlockPosition, imageFilePath)
+    section(class='container-fluid'+' '+sectionClassName)
+            .container-center-xl
+                +index-blockheader(title, false, true, 0)
+                .media-container-row.align-content-stretch
+                        +index-bottom-image(imageFilePath, title, textBlockPosition)
+                        +index-bottom-text(textBlockPosition)
+
+mixin index-bottom-image(imageFilePath, title, textBlockPosition)
+    if textBlockPosition == "right-text-block"
+        .col-12.col-md-5.col-xl-6.order-md-1.image-col
+            .h-100
+                img.img-fluid(src=imageFilePath, alt=title)
+    else
+        .col-12.col-md-5.col-xl-6.order-md-2.image-col
+            .h-100
+                img.img-fluid(src=imageFilePath, alt=title)
+
+mixin index-bottom-text(textBlockPosition)
+    if textBlockPosition == "right-text-block"
+        .col-12.col-md-7.col-xl-6.order-md-2.text-col.remove-sm-right-padding
+            .text-outer.h-100
+                .text-inner
+                    .text-content.font-size-14px
+                        |Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        |1. Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        |2. Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 
+                        |3. Laborum.voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+                        |4. Sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    .d-flex.button-buy
+                        button(class="btn-flat-white mx-auto", onclick="orderCertificate()")
+                            |КУПИТЬ
+    else
+        .col-12.col-md-7.col-xl-6.order-md-1.text-col.remove-sm-left-padding
+            .text-outer.h-100
+                .text-inner
+                    .text-content.font-size-14px
+                        |Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        |1. Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        |2. Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 
+                        |3. Laborum.voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+                        |4. Sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    .d-flex.button-buy
+                        button(class="btn-flat-white mx-auto", onclick="orderPhotocource()")
+                            |КУПИТЬ
+
+
+mixin index-blockheader(title, subtitle, centerXl, bottomLineColsXl)
+    -var headerCols=12-bottomLineColsXl
+    .media-container-row.row-eq-height.section-title
+        if bottomLineColsXl == 0
+            .col-12.remove-col-md-paddings
+                h2(class= centerXl ? 'text-xl-center' : '') #{title}
+            if(subtitle != false)
+                span #{subtitle}
+        else
+            div(class="d-none remove-col-md-paddings baseline d-xl-flex col-xl-" + bottomLineColsXl)
+            div(class="col-12 col-xl-" + headerCols)
+                if(subtitle == false)
+                    h2 #{title}
+                else
+                    h2 #{title}
+                    span(class="subtitle") #{subtitle}    
+
+mixin index-middle-image(imageFilePath)
+    .media-container-row.padding-top-25px
+        .col-12.remove-col-paddings.position-relative
+            img.img-fluid(src=imageFilePath)
+            a(class="btn-flat-black-transparent-hover-black btn-over-image", href="#")
+                |БОЛЬШЕ РАБОТ
+
+mixin index-middle-cards(carouselId)
+    .media-container-row.padding-top-25px
+        div(id=carouselId, class="carousel slide price-slider owl-carousel")
+            +index-middle-card('',1, 'МАКСИМАЛЬНЫЙ','/static/img/max_battery.png', '7500 грн', '0')
+            +index-middle-card(' active',5, 'ОПТИМАЛЬНЫЙ','/static/img/middle_battery.png', '4500 грн', '4000 грн')
+            +index-middle-card('',1, 'МИНИМАЛЬНЫЙ','/static/img/min_battery.png', '1500 грн', '0')
+
+mixin index-middle-card(active, borderWidth, header, batteryUrl, price, priceOld)
+    div(class="item carousel-item col-12 col-md-4 border-width-"+borderWidth+active)
+        .inner
+            h3 #{header}
+            span(class="subtitle") ПАКЕТ
+            .clearfix
+            .battery-row
+                img(src=batteryUrl)
+            .clearfix
+            .text-content
+                |Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                |1. Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                |2. Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 
+                |3. Laborum.voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+                |4. Sunt in culpa qui officia deserunt mollit anim id est laborum.
+            .clearfix
+            .media-container-row.no-gutters.button-buy.row-eq-height
+                .col-12.d-flex
+                    button(class="btn-flat-white btn-short mx-left", onclick="orderPackage('СВАДЬБА - оптимальный пакет услуг', '4000 грн')")
+                        |ЗАКАЗАТЬ            
+                    if (priceOld =="0")
+                        .d-flex.price
+                            .price-one #{price}
+                    else
+                        .d-flex.price-sale
+                            .price-old #{priceOld}
+                            .price-new #{price}
+
+     
+    

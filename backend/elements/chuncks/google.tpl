@@ -1,0 +1,1 @@
+[[getSiteSettings? &case=`google`]]

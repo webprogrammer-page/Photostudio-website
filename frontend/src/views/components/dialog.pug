@@ -1,0 +1,131 @@
+div(class="modal result-message" id="hidden-result-message")
+    .inner-vertical
+            .inner-gorizontal.d-table-cell
+                h4
+                    |ВАША ЗАЯВКА ПРИНЯТА
+                span
+                    |Мы с Вами свяжемся в ближайшее время.
+div(class="modal result-message" id="hidden-order-package")
+    .inner-vertical.w-100
+            .media-container-row.inner-gorizontal.w-100
+                .col-12.d-flex.mx-auto.justify-content-center
+                    .d-inline-block.text-left
+                        h4.header.d-block
+                            |ЗАКАЗАТЬ ФОТОСЪЕМКУ
+                        span.one-message.d-block
+            form(id="orderIndexPackage", method="post")
+                .media-container-row.inner-gorizontal.w-100.container-center-xl.inputs                    
+                        .col-3.col-sm-4.col-md-4.col-lg-5.col-xl-5.d-flex.justify-content-end.padding-right-0
+                            .d-inline-block.text-right
+                                label(for="order-package-name", class="text-right")
+                                        |Имя:
+                        .col-9.col-sm-8.col-md-8.col-lg-3.col-xl-3.d-flex.justify-content-start
+                            .d-inline-block
+                                input(type="text", id="order-package-name")
+                .media-container-row.inner-gorizontal.w-100.container-center-xl.inputs
+                        .col-3.col-sm-4.col-md-4.col-lg-5.col-xl-5.d-flex.justify-content-end.padding-right-0
+                            .d-inline-block.text-right
+                                label(for="order-package-name", class="text-right")
+                                        |Телефон:
+                        .col-9.col-sm-8.col-md-4.col-lg-3.col-xl-3.d-flex.justify-content-start
+                            .d-inline-block
+                                input(type="text", id="order-package-phone", class="mask-phone")
+                .media-container-row.inner-gorizontal.w-100.container-center-xl.buttons
+                    .col-9.offset-3.col-sm-8.offset-sm-4.col-md-8.offset-md-4.col-lg-3.offset-lg-5.col-xl-3.offset-xl-5.d-flex.justify-content-center
+                        .d-block.text-left.button-wrap.justify-content-center
+                            button.btn-flat-white
+                                |ОТПРАВИТЬ
+div(class="modal result-message" id="hidden-certificate")
+    .inner-vertical.w-100
+            .media-container-row.inner-gorizontal.w-100
+                .col-12.d-flex.mx-auto.justify-content-center
+                    .d-inline-block.text-left
+                        h4.header.d-block
+                            |КУПИТЬ ПОДАРОЧНЫЙ СЕРТИФИКАТ
+                        span.one-message.d-block
+            form(id="orderIndexCertificate", method="post")
+                .media-container-row.inner-gorizontal.w-100.container-center-xl
+                    .col-9.offset-3.col-sm-8.offset-sm-4.col-md-8.offset-md-4.col-lg-3.offset-lg-5.col-xl-3.offset-xl-5.d-flex.justify-content-center
+                        .d-block.text-left.button-wrap.justify-content-center.bold
+                            span
+                                |Ваши данные:
+                .media-container-row.inner-gorizontal.w-100.container-center-xl.inputs                    
+                        .col-3.col-sm-4.col-md-4.col-lg-5.col-xl-5.d-flex.justify-content-end.padding-right-0
+                            .d-inline-block.text-right
+                                label(for="order-сertificate-name", class="text-right")
+                                        |Имя:
+                        .col-9.col-sm-8.col-md-8.col-lg-3.col-xl-3.d-flex.justify-content-start
+                            .d-inline-block
+                                input(type="text", id="order-сertificate-name")
+                .media-container-row.inner-gorizontal.w-100.container-center-xl.inputs
+                        .col-3.col-sm-4.col-md-4.col-lg-5.col-xl-5.d-flex.justify-content-end.padding-right-0
+                            .d-inline-block.text-right
+                                label(for="order-сertificate-name", class="text-right")
+                                        |Телефон:
+                        .col-9.col-sm-8.col-md-4.col-lg-3.col-xl-3.d-flex.justify-content-start
+                            .d-inline-block
+                                input(type="text", id="order-сertificate-phone", class="mask-phone")
+                .media-container-row.inner-gorizontal.w-100.container-center-xl
+                    .col-9.offset-3.col-sm-8.offset-sm-4.col-md-8.offset-md-4.col-lg-3.offset-lg-5.col-xl-3.offset-xl-5.d-flex.justify-content-center
+                        .d-block.text-left.button-wrap.justify-content-center.bold
+                            span
+                                |Кому дарите?
+                .media-container-row.inner-gorizontal.w-100.container-center-xl.inputs                    
+                        .col-3.col-sm-4.col-md-4.col-lg-5.col-xl-5.d-flex.justify-content-end.padding-right-0
+                            .d-inline-block.text-right
+                                label(for="order-сertificate-name-who", class="text-right")
+                                        |Имя:
+                        .col-9.col-sm-8.col-md-8.col-lg-3.col-xl-3.d-flex.justify-content-start
+                            .d-inline-block
+                                input(type="text", id="order-сertificate-name-who")
+                .media-container-row.inner-gorizontal.w-100.container-center-xl.inputs
+                        .col-3.col-sm-4.col-md-4.col-lg-5.col-xl-5.d-flex.justify-content-end.padding-right-0
+                            .d-inline-block.text-right
+                                label(for="order-сertificate-phone-who", class="text-right")
+                                        |Телефон:
+                        .col-9.col-sm-8.col-md-4.col-lg-3.col-xl-3.d-flex.justify-content-start
+                            .d-inline-block
+                                input(type="text", id="order-сertificate-phone-who", class="mask-phone")
+                .media-container-row.inner-gorizontal.w-100.container-center-xl.inputs
+                        .col-3.col-sm-4.col-md-4.col-lg-5.col-xl-5.d-flex.justify-content-end.padding-right-0
+                            .d-inline-block.text-right
+                                label(for="order-сertificate-name-who", class="text-right")
+                                        |Какую съемку хотите подарить?
+                        .col-9.col-sm-8.col-md-4.col-lg-3.col-xl-3.d-flex.justify-content-start
+                            .d-inline-block
+                                textarea( id="order-сertificate-text")                
+                .media-container-row.inner-gorizontal.w-100.container-center-xl.buttons
+                    .col-9.offset-3.col-sm-8.offset-sm-4.col-md-8.offset-md-4.col-lg-3.offset-lg-5.col-xl-3.offset-xl-5.d-flex.justify-content-center
+                        .d-block.text-left.button-wrap.justify-content-center
+                            button.btn-flat-white
+                                |ОТПРАВИТЬ                                
+div(class="modal result-message" id="hidden-photocourse")
+    .inner-vertical.w-100
+            .media-container-row.inner-gorizontal.w-100
+                .col-12.d-flex.mx-auto.justify-content-center
+                    .d-inline-block.text-left
+                        h4.header.d-block
+                            |ЗАКАЗАТЬ ФОТОКУРС
+                        span.one-message.d-block
+            form(id="orderIndexPhotocourse", method="post")
+                .media-container-row.inner-gorizontal.w-100.container-center-xl.inputs                    
+                        .col-3.col-sm-4.col-md-4.col-lg-5.col-xl-5.d-flex.justify-content-end.padding-right-0
+                            .d-inline-block.text-right
+                                label(for="order-photocourse-name", class="text-right")
+                                        |Имя:
+                        .col-9.col-sm-8.col-md-8.col-lg-3.col-xl-3.d-flex.justify-content-start
+                            .d-inline-block
+                                input(type="text", id="order-photocourse-name")
+                .media-container-row.inner-gorizontal.w-100.container-center-xl.inputs
+                        .col-3.col-sm-4.col-md-4.col-lg-5.col-xl-5.d-flex.justify-content-end.padding-right-0
+                            .d-inline-block.text-right
+                                label(for="order-photocourse-name", class="text-right")
+                                        |Телефон:
+                        .col-9.col-sm-8.col-md-4.col-lg-3.col-xl-3.d-flex.justify-content-start
+                            .d-inline-block
+                                input(type="text", id="order-photocourse-phone", class="mask-phone")
+                .media-container-row.inner-gorizontal.w-100.container-center-xl.buttons
+                    .col-9.offset-3.col-sm-8.offset-sm-4.col-md-8.offset-md-4.col-lg-3.offset-lg-5.col-xl-3.offset-xl-5.d-flex.justify-content-center
+                        .d-block.text-left.button-wrap.justify-content-center
+                            button.btn-flat-white
+                                |ОТПРАВИТЬ                            

@@ -1,0 +1,1 @@
+[[getTypePhotography? &tpl=`typePhotographyItem` &tplPackage=`typePhotographyItemPackage`]]

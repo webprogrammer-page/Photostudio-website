@@ -1,0 +1,20 @@
+include ../variables
+include ../mixins
+  
+
+
+doctype html
+html(lang="ru")
+  include ../shared/head
+  block head
+  noscript
+    style
+      |body {opacity:1}
+  body    
+    include ../components/header
+    block header
+    block content
+    include ../components/footer
+    block footer
+    include ../components/dialog
+    block dialog
